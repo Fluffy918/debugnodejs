@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require('express')
-const mysql = require('msql2')
+const mysql = require('mysql2')
 
 
 const app = express()
