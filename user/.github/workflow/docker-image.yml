@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  nodejs:
+    build:
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASS:
+      DB_NAME "projetnodejs"
+  
+  mysql:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: projetnodejs
+    ports:
+      - "3306:3306"
